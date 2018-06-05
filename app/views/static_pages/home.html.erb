@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-sm-7">
+        <h2>新着記事</h2>
+        <% 3.times do %>
+        <a href='articles/show'>
+        <div class="row">
+            <div class="col-sm-3">
+                <p><%= image_tag "image_01.jpg", :width => "100%" %></p>
+            </div>
+            <div class="col-sm-6">
+                <ul>
+                    <li>2018/05/31</li>
+                    <li>タイトル</li>
+                    <li>カテゴリ</li>
+                </ul>
+            </div>
+        </div>
+        </a>
+        <% end %>
+    </div>
+    <div class="col-sm-4">
+        <h2>カテゴリ</h2>
+    </div>
+</div>
+<%= link_to 'もっと見る' , articles_path, class: 'btn btn-lg btn-primary' %>

@@ -1,0 +1,19 @@
+<h2>記事一覧</h2>
+<% 5.times do %>
+    <a href='articles/show'>
+    <div class="row">
+        <div class="col-sm-3">
+            <p><%= image_tag "image_01.jpg", :width => "100%" %></p>
+        </div>
+        <div class="col-sm-6">
+            <ul>
+                <li>2018/05/31</li>
+                <li>タイトル</li>
+                <li>カテゴリ</li>
+            </ul>
+        </div>
+    </div>
+    </a>
+<% end %>
+
+
