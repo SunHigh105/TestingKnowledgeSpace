@@ -1,0 +1,10 @@
+<h1>マイページ</h1>
+<div class="col-sm-6">
+    <ul>
+        <li>名前：<%= @user.name %></li>
+        <li>メールアドレス：<%= @user.email %></li>
+        <li>パスワード：<%= @user.password_digest %></li>
+    </ul>
+</div>
+<%= link_to "編集", edit_user_path, class: "btn btn-primary"%>
+
