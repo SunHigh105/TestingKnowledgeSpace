@@ -2,11 +2,18 @@
   <div class="header">
     <%= link_to "TestingKnowledge", root_path, id: 'logo' %>
     <nav>
+    <% if logged_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Mypage", current_user %></li>
+        <li><%= link_to "Logout",  logout_path, method: :delete %></li>
+      </ul>
+    <% else %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Sign Up",  signup_path %></li>
         <li><%= link_to "Login",  login_path %></li>
         <li><%= link_to 'Post', post_path %></li>
       </ul>
+    <% end %>
     </nav>
   </div>
 </header>
