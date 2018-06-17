@@ -2,7 +2,7 @@
     <h2><%= @article.title %></h2>
     <ul>
         <li><%= @article.created_at %></li>
-        <li>投稿者</li>
+        <li><%= User.find(@article.user_id).name %></li>
     </ul>
     <p><%= @article.content %></p>
 
