@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+range = 1..5
+
+range.each do |n|
+    User.create!(
+        name: "ユーザー#{n}",
+        email: "user_#{n}@test.co.jp",
+        password: "password_#{n}",
+        password_confirmation: "password_#{n}"
+    )
+    Article.create!(
+        title: "タイトル#{n}",
+        content: "この記事は#{n}番目の記事です",
+        image: "image_01.jpg",
+        user_id: n, 
+        category_id: n
+    )
+end

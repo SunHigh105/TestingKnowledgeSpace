@@ -1,2 +1,12 @@
-<h2>Articles#show</h2>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="container">
+    <h2><%= @article.title %></h2>
+    <ul>
+        <li><%= @article.created_at %></li>
+        <li>投稿者</li>
+    </ul>
+    <p><%= @article.content %></p>
+
+    <%= link_to '編集', edit_article_path(@article.id), class: 'btn btn-outline-dark' %>
+    <%= link_to '削除', @article, class: 'btn btn-outline-dark', method: :delete %>
+    <%= link_to '一覧へ', articles_path, class: 'btn btn-outline-dark' %>
+</div>
