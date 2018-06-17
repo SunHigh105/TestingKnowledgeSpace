@@ -1,9 +1,11 @@
 <%= form_for(@article) do |f| %>
+  <%= render 'shared/article_error_messages', object: @article %>
+
   <%= f.label :title %>
   <%= f.text_field :title, class: 'form-control' %>
 
   <%= f.label :content %>
   <%= f.text_area :content, :rows => '10', class: 'form-control' %>
 
-  <%= f.submit "投稿する", class: "btn btn-primary" %>
+  <%= f.submit "保存", class: "btn btn-primary" %>
 <% end %>

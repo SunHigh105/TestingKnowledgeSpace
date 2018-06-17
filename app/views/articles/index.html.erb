@@ -1,19 +1,18 @@
-<h2>記事一覧</h2>
-<% 5.times do %>
-    <a href='articles/show'>
+<h1>記事一覧</h1>
+<div class="container">
+<% @articles.each do |article| %>
     <div class="row">
         <div class="col-sm-3">
-            <p><%= image_tag "image_01.jpg", :width => "100%" %></p>
+            <p><%= link_to image_tag("#{article.image}", :width => "85%"), article_path(article.id) %></p>
         </div>
         <div class="col-sm-6">
             <ul>
-                <li>2018/05/31</li>
-                <li>タイトル</li>
-                <li>カテゴリ</li>
+                <li><%= article.created_at %></li>
+                <li><%= link_to article.title, article_path(article.id) %></li>
             </ul>
         </div>
     </div>
-    </a>
 <% end %>
+</div>
 
 
