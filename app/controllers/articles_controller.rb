@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_target_article, only:[:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def index
     @articles = Article.all
@@ -14,7 +15,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
     if @article.save
       flash[:success] = "登録が完了しました"
       redirect_to article_url(@article)

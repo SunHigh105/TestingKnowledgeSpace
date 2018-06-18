@@ -36,32 +36,12 @@ class UsersController < ApplicationController
     @articles = @user.articles.all
   end
 
-  def delete
+  def destroy
     User.find(params[:id]).destroy
     flash[:success] = "ユーザーを削除しました"
     redirect_to users_url
   end
 
   private
-
-  # ユーザーのパラメータ
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
-  # ログインしていなければログイン画面にリダイレクト
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "ログインしてください。"
-      redirect_to login_url
-    end
-  end
-
-  # ログインしているユーザーと違っていたらホーム画面にリダイレクト
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
-  end
 
 end
