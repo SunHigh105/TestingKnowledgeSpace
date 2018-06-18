@@ -16,14 +16,18 @@
 <h2>投稿した記事</h2>
 <table class="table">
     <tr>
-        <th>投稿日時</th>
         <th>タイトル</th>
+        <th>投稿日時</th>
         <th></th>
         
     </tr>
+    <% @articles.each do |article| %>
     <tr>
-        <td><%= "#" %></td>
-        <td><%= "#" %></td>
-        <td><%= "#" %></td>
+        <td><%= article.title %></td>
+        <td><%= article.created_at %></td>
+        <td><%= link_to "詳細", article_path(article.id) %></td>
+    </tr>
+    <% end %>
 </table>
+
 
