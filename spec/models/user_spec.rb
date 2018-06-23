@@ -45,7 +45,7 @@ describe User do
 
   context 'メールアドレスが255文字を超えるとエラーになること' do
     before do
-      subject.email = "t" * 255
+      subject.email = "t" * 256
       subject.save
     end
     it { should_not be_valid }
@@ -58,7 +58,7 @@ describe User do
       subject.save
     end
     it { should_not be_valid }
-    it { expect(subject.errors.full_messages[0]).to eq "メールアドレスは不正な値です" }
+    it { expect(subject.errors.full_messages[0]).to eq "メールアドレスが不正です" }
   end
 
   context 'メールアドレスに半角英数記号以外を含むときエラーになること' do
@@ -67,12 +67,18 @@ describe User do
       subject.save
     end
     it { should_not be_valid }
-    it { expect(subject.errors.full_messages[0]).to eq "メールアドレスは不正な値です" }
+    it { expect(subject.errors.full_messages[0]).to eq "メールアドレスが不正です" }
   end
 
   context '登録ずみのメールアドレスはエラーになること' do
     before do
-      subject.email = "tarou@test.com"
+      User.create!(
+        name: "Jirou Yamada",
+        email: "jirou@test.com",
+        password: "jirou123", 
+        password_confirmation: "jirou123"
+      )
+      subject.email = "jirou@test.com"
       subject.save
     end
     it { should_not be_valid }
@@ -82,8 +88,29 @@ describe User do
   context 'パスワードが空欄の時エラーになること' do
     before do
       subject.email = "tarou@test.jp"
+      subject.save
       subject.password = ""
       subject.password_confirmation = ""
+      subject.save
+    end
+    it { should_not be_valid }
+    it { expect(subject.errors.full_messages[0]).to eq "パスワードを入力してください" }
+  end
+
+  context 'パスワードが6文字より少ないとエラーになること' do
+    before do
+      subject.password = "tarou"
+      subject.password_confirmation = "tarou"
+      subject.save
+    end
+    it { should_not be_valid }
+    it { expect(subject.errors.full_messages[0]).to eq "パスワードは6文字以上で入力してください" }
+  end
+
+  context 'パスワードが一致していないとエラーになること' do
+    before do
+      subject.password = "tarou123"
+      subject.password_confirmation = "tarou234"
       subject.save
     end
     it { should_not be_valid }
