@@ -7,7 +7,7 @@
         </div>
         <div class="col-sm-6">
             <ul>
-                <li><%= article.created_at %></li>
+                <li><%= article.created_at.to_s(:datetime_jp)  %></li>
                 <li><%= link_to article.title, article_path(article.id) %></li>
                 <li><%= User.find(article.user_id).name %></li>
             </ul>
