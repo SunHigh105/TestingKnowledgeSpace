@@ -7,14 +7,6 @@ describe User do
     password_confirmation: "tarou123"
   ) }
 
-  context '正しいデータで登録できること' do
-    before do
-      subject.save
-    end
-    it { should be_valid }
-    it { expect(subject.errors.size).to eq 0 }
-  end
-
   context '名前が空欄のときエラーになること' do
     before do
       subject.name = ""
@@ -87,8 +79,6 @@ describe User do
 
   context 'パスワードが空欄の時エラーになること' do
     before do
-      subject.email = "tarou@test.jp"
-      subject.save
       subject.password = ""
       subject.password_confirmation = ""
       subject.save
@@ -115,5 +105,13 @@ describe User do
     end
     it { should_not be_valid }
     it { expect(subject.errors.full_messages[0]).to eq "パスワード（確認）とパスワードの入力が一致しません" }
+  end
+
+  context '正しいデータで登録できること' do
+    before do
+      subject.save
+    end
+    it { should be_valid }
+    it { expect(subject.errors.size).to eq 0 }
   end
 end
