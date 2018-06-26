@@ -1,19 +1,15 @@
 <h1>記事一覧</h1>
-<div class="container">
 <% @articles.each do |article| %>
-    <div class="row">
-        <div class="col-sm-3">
-            <p><%= link_to image_tag("#{article.image}", :width => "85%"), article_path(article.id) %></p>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title"><%= article.title %></h2>
+            <p class="card-text"><%= article.content %></p>
+            <%= link_to "もっと見る", article_path(article.id), class: 'btn btn-primary' %>
         </div>
-        <div class="col-sm-6">
-            <ul>
-                <li><%= article.created_at.to_s(:datetime_jp)  %></li>
-                <li><%= link_to article.title, article_path(article.id) %></li>
-                <li><%= User.find(article.user_id).name %></li>
-            </ul>
+        <div class="card-footer text-muted">
+            <%= article.created_at.to_s(:datetime_jp) %>
         </div>
     </div>
 <% end %>
-</div>
 
 

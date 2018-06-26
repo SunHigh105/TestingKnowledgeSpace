@@ -6,9 +6,12 @@
 body {
     padding-top: 60px;
     padding: 10px, 30px;
+    height: 100%;
   }
 .container{
+  padding: 20px;
    background-color: #E8EBEF;
+   height: 100%;
    ul{
     list-style: none;
    }
@@ -16,7 +19,6 @@ body {
 .header{
     width: 90%;
     padding-left: 7%;
-    background-color: #E8EBEF;
 }
   
   section {
@@ -35,7 +37,9 @@ body {
     margin-bottom: 10px;
   }
   /* header */
-
+.navbar-fixed-top{
+  background-color: rgb(255, 255, 255);
+}
 #logo {
     float: left;
     margin-right: 10px;
@@ -50,7 +54,18 @@ body {
     color:#272D2D;
     text-decoration: none;
   }
-
+  /* footer */
+  .footer {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 10px;
+    // margin-left: 70px;
+    // margin-right: 70px;
+    // padding-top: 5px;
+    // border-top: 1px solid $gray-medium-light;
+    color: $gray-light;
+    // $gray-lightでも可
+  }
   /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -117,6 +132,7 @@ input, textarea, select, .uneditable-input {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  margin-bottom: 20px;
 }
 .card-body {
   display: inline;
@@ -136,7 +152,8 @@ input, textarea, select, .uneditable-input {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 .btn{
-  background-color: #16C172
+  background-color: #16c172;
+  border: none;
 }
 .card-header {
   padding: 0.75rem 1.25rem;
