@@ -18,7 +18,6 @@ range.each do |n|
         title: "タイトル#{n}",
         content: "この記事は#{n}番目の記事です",
         image: "image_01.jpg",
-        user_id: n, 
-        category_id: n
+        user_id: n
     )
 end
