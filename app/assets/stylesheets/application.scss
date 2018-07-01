@@ -161,4 +161,33 @@ input, textarea, select, .uneditable-input {
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
+/* Mypage */
+.mypage{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+  .link{
+    display: inline;
+  }
+}
+/* form */
+.col-md-6{
+  ul{
+    margin: 0 auto;
+    li{
+      display: inline-block;
+    }
+  }
+  .form-btn{
+    display: block;
+    width: 150px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #16c172;
+    padding: 5px 0;
+    margin: 0 auto;
+  }
+}
+
 

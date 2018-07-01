@@ -1,15 +1,15 @@
 <div class="row">
     <div class="col-md-8">
         <h2>新着記事</h2>
-        <% @latest_articles.each do |article| %>
+        <% (0..2).each do |n| %>
             <div class="card mb-4">
                 <div class="card-body">
-                    <h2 class="card-title"><%= article.title %></h2>
-                    <p class="card-text"><%= article.content%></p>
-                    <%= link_to "もっと見る", article_path(article.id), class: 'btn btn-primary' %>
+                    <h2 class="card-title"><%= @latest_articles[n].title %></h2>
+                    <p class="card-text"><%= @latest_articles[n].content%></p>
+                    <%= link_to "もっと見る", article_path(@latest_articles[n].id), class: 'btn btn-primary' %>
                 </div>
                  <div class="card-footer text-muted">
-                    <%= article.created_at.to_s(:datetime_jp) %>
+                    <%= @latest_articles[n].created_at.to_s(:datetime_jp) %>
                 </div>
             </div>
         <% end %>
