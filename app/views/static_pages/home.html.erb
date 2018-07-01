@@ -5,7 +5,12 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="card-title"><%= @latest_articles[n].title %></h2>
-                    <p class="card-text"><%= @latest_articles[n].content%></p>
+                    <p>
+                    <% @latest_articles[n].categories.each do |category| %>
+                        <span class="badge badge-primary"><%= category.name %></span>
+                    <% end %>
+                    </p>
+                    <p class="card-text"><%= @latest_articles[n].content.truncate(50)%></p>
                     <%= link_to "もっと見る", article_path(@latest_articles[n].id), class: 'btn btn-primary' %>
                 </div>
                  <div class="card-footer text-muted">

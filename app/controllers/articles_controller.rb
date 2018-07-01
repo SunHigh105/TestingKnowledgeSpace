@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article.delete
+    @article.destroy
     flash[:notice] = "投稿を削除しました"
     redirect_to articles_path
   end
@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :content, category_ids: [])
   end
 
   def set_target_article

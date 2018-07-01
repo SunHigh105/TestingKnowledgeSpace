@@ -21,3 +21,12 @@ range.each do |n|
         user_id: n
     )
 end
+
+Category.create([
+    {name: "基礎知識"},
+    {name: "自動テスト"},
+    {name: "ツール"},
+    {name: "プロセス改善"},
+    {name: "イベント"},
+    {name: "雑談"}
+])

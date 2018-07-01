@@ -6,5 +6,15 @@
 
   <%= f.label :content %>
   <%= f.text_area :content, :rows => '10', class: 'form-control' %>
+  <%= f.label "カテゴリ(複数選択可)" %>
+  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
+    <div class="form-check">
+    <ul>
+      <%= category.label class: 'form-check-label' do %>
+        <li class="category_checkbox"><%= category.check_box class: 'form-check-input' %></li>
+        <li class="category_checkbox"><%= category.text %></li>
+      <% end %>
+    </div>
+  <% end %>
   <%= f.submit "保存", class: "btn form-btn" %>
 <% end %>
