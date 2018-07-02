@@ -1,0 +1,16 @@
+<div class="col-md-4">
+    <h2>カテゴリ</h2>
+    <div class="card my-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="list-unstyled mb-0">
+                        <% @categories.each do |category| %>
+                            <li><%= link_to "#{category.name}(#{category.articles.size})", articles_path(category_id: category.id), method: :get %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

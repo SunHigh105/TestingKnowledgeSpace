@@ -3,7 +3,9 @@ class ArticlesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = params[:category_id].present? ? Category.find(params[:category_id]).articles : Article.all
+    # @articles = Article.all
+    @categories = Category.all
   end
 
   def show
@@ -39,7 +41,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article.delete
+    @article.destroy
     flash[:notice] = "投稿を削除しました"
     redirect_to articles_path
   end
@@ -47,7 +49,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :content, category_ids: [])
   end
 
   def set_target_article

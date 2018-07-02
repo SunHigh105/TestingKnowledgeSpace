@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180618124934) do
+ActiveRecord::Schema.define(version: 20180701073204) do
+
+  create_table "article_category_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "article_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["article_id"], name: "index_article_category_relations_on_article_id", using: :btree
+    t.index ["category_id"], name: "index_article_category_relations_on_category_id", using: :btree
+  end
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -20,6 +29,12 @@ ActiveRecord::Schema.define(version: 20180618124934) do
     t.integer  "category_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -32,5 +47,7 @@ ActiveRecord::Schema.define(version: 20180618124934) do
     t.index ["user_id"], name: "index_users_on_user_id", using: :btree
   end
 
+  add_foreign_key "article_category_relations", "articles"
+  add_foreign_key "article_category_relations", "categories"
   add_foreign_key "users", "users"
 end

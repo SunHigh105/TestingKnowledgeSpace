@@ -73,14 +73,14 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: center;
   }
   
   h2 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     letter-spacing: -1px;
     margin-bottom: 30px;
     font-weight: normal;
@@ -161,6 +161,13 @@ input, textarea, select, .uneditable-input {
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
+.badge{
+  font-size: 0.85em;
+  font-weight: lighter;
+  background-color: #149CB7;
+  padding: 5px;
+}
+
 /* Mypage */
 .mypage{
   display: block;
@@ -187,6 +194,9 @@ input, textarea, select, .uneditable-input {
     background-color: #16c172;
     padding: 5px 0;
     margin: 0 auto;
+  }
+  .category_checkbox{
+    margin: 0 10px;
   }
 }
 
