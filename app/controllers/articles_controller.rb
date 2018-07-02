@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = params[:category_id].present? ? Category.find(params[:category_id]).articles : Article.all
+    # @articles = Article.all
     @categories = Category.all
   end
 
