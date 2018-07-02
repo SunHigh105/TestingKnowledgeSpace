@@ -7,7 +7,7 @@
                     <h2 class="card-title"><%= @latest_articles[n].title %></h2>
                     <p>
                     <% @latest_articles[n].categories.each do |category| %>
-                        <span class="badge badge-primary"><%= category.name %></span>
+                        <span class="badge badge-info"><%= category.name %></span>
                     <% end %>
                     </p>
                     <p class="card-text"><%= @latest_articles[n].content.truncate(50)%></p>
