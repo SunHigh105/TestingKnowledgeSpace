@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-8">
         <h2>新着記事</h2>
-        <% if @latest_articles != nil %>
+        <% if @latest_articles.size >= 3  %>
         <% (0..2).each do |n| %>
             <div class="card mb-4">
                 <div class="card-body">
