@@ -2,6 +2,7 @@
 <div class="row">
     <div class="col-md-8">
         <h2>全<%= @articles.size %>件</h2>
+        <% if @articles != nil %>
         <% @articles.each do |article| %>
             <div class="card mb-4">
                 <div class="card-body">
@@ -18,6 +19,9 @@
                     <%= article.created_at.to_s(:datetime_jp) %>
                 </div>
             </div>
+        <% end %>
+        <% else %>
+            <p>まだ記事が投稿されていません</p>
         <% end %>
     </div>
     <%= render 'category' %>
