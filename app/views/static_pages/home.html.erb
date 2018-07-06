@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-8">
         <h2>新着記事</h2>
+        <% if @latest_articles != nil %>
         <% (0..2).each do |n| %>
             <div class="card mb-4">
                 <div class="card-body">
@@ -17,6 +18,9 @@
                     <%= @latest_articles[n].created_at.to_s(:datetime_jp) %>
                 </div>
             </div>
+        <% end %>
+        <% else %>
+            <p>新着の記事はありません</p>
         <% end %>
         <%= link_to '記事一覧へ' , articles_path%>
     </div>
