@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[@SunHigh105](https://twitter.com/SunHigh105)がRuby on Railsを用いて練習用に作ったWebアプリケーションです。
+https://arcane-shelf-71959.herokuapp.com/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+テストに関する様々な情報を共有するサイト、という程で作りました。
