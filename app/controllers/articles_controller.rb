@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:notice] = "投稿を削除しました"
+    flash[:success] = "投稿を削除しました"
     redirect_to articles_path
   end
 
