@@ -6,6 +6,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '>= 3.2'
 gem 'autoprefixer-rails', '8.6.0'
+gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use mysql as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -34,7 +35,6 @@ gem 'capybara'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'mysql2', '>= 0.3.18', '< 0.5'
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'factory_bot_rails'
