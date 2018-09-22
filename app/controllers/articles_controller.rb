@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_target_article, only:[:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @articles = params[:category_id].present? ? Category.find(params[:category_id]).articles : Article.all
