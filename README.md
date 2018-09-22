@@ -1,6 +1,6 @@
 # README
 
-[@SunHigh105](https://twitter.com/SunHigh105)がRuby on Railsを用いて練習用に作ったWebアプリケーションです。
+Ruby on Railsを用いて練習用に作ったWebアプリケーションです。
 
 https://arcane-shelf-71959.herokuapp.com/
 
@@ -9,7 +9,7 @@ https://arcane-shelf-71959.herokuapp.com/
 
 ### 開発環境の起動方法
 
-※ Dockerがいります。
+※ Docker for Macのインストール必須
 
 ```
 docker-compose build
@@ -21,10 +21,8 @@ http://localhost:3000/
 
 で開発環境を確認できます。
 
-開発環境でrailsコマンドを実行したいときは
+開発環境でrailsコマンドを実行したいとき
 
 ```
-docker-compose run web 
+docker-compose run web [command]
 ```
-
-の後に続けてください。
