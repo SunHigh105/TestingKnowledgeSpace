@@ -17,12 +17,12 @@
                     <%= link_to "もっと見る", article_path(@latest_articles[n].id), class: 'btn btn-primary' %>
                 </div>
                  <div class="card-footer text-muted">
-                    <%= @latest_articles[n].created_at.to_s(:datetime_jp) %>
+                    投稿日：<%= @latest_articles[n].created_at.to_s(:datetime_jp) %>
                 </div>
             </div>
         <% end %>
         <% end %>
-        <%= link_to '記事一覧へ' , articles_path%>
+        <p><%= link_to '記事一覧へ' , articles_path%></p>
     </div>
     <%= render 'articles/category' %>
 </div>
